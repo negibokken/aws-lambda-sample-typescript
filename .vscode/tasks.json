@@ -6,9 +6,10 @@
             "command": "gulp",
             "showOutput": "never",
             "args": [
-               "build"
+               "default"
             ],
-            "isShellCommand": true
+            "isShellCommand": true,
+            "isBuildCommand": true
         },
         {
             "taskName": "clean",
