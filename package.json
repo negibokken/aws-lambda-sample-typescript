@@ -8,6 +8,7 @@
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "@types/node": "^7.0.13",
     "@types/request": "^0.0.42",
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "del": "^2.2.2",
