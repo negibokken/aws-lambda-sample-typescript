@@ -1,4 +1,3 @@
-/// <reference types="aws-sdk" />
 import AWS = require('aws-sdk');
 import * as request from 'request';
 
@@ -12,6 +11,9 @@ function publish(): Promise<any> {
       Subject: 'test',
       Message: 'test message',
     };
+    sns.publish(params, (err, data) => {
+      err ? reject(err) : resolve(data);
+    });
   });
 }
 
