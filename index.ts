@@ -1,4 +1,5 @@
-import * as AWS from 'aws-sdk';
+/// <reference types="aws-sdk" />
+import AWS = require('aws-sdk');
 import * as request from 'request';
 
 interface IAWSEvent {}
@@ -7,12 +8,10 @@ interface IContext {}
 function publish(): Promise<any> {
   return new Promise((resolve, reject) => {
     const sns: AWS.SNS = new AWS.SNS();
-    let params: any = {
+    let params: AWS.SNS.PublishInput = {
       Subject: 'test',
       Message: 'test message',
     };
-    sns.publish(params);
-
   });
 }
 
