@@ -74,7 +74,7 @@ function publish(params: AWS.SNS.PublishInput): Promise<any> {
 /**
  * @param {any} event AWS Event
  * @param {any} context AWA Lambda Context
- * @callback {any} First argument (err), Second argument (success message)
+ * @param {any} callback First argument (err), Second argument (success message)
  * @returns {void}
  * @description
  * AWS handler
