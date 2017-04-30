@@ -13,7 +13,8 @@ function getWeatherInformation(): Promise<any> {
             url: process.env.URL,
         };
         request(param, (err: any, response: request.RequestResponse, body: any) => {
-            err ? reject(err) : resolve(body);
+            let weatherInformation: WeatherNewsResponse = JSON.parse(body);
+            err ? reject(err) : resolve(weatherInformation);
         });
     });
 }
@@ -24,11 +25,11 @@ function getWeatherInformation(): Promise<any> {
  * @description
  * Promise wrapped arrange object
  */
-function arrangeInformation(body: any): Promise<AWS.SNS.PublishInput> {
+function arrangeInformation(weatherNews: WeatherNewsResponse): Promise<AWS.SNS.PublishInput> {
     return new Promise((resolve: Function, reject: Function) => {
         const params: AWS.SNS.PublishInput = {
-            Subject: "aaaa",
-            Message: "test message"
+            Subject: JSON.stringify(weatherNews.location),
+            Message: JSON.stringify(weatherNews.forecasts)
         };
         resolve(params);
     });
