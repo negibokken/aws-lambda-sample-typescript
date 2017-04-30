@@ -35,10 +35,8 @@ namespace :cfn do
 
   task :execute do
     desc 'execute CloudFormation template'
-    unless File.exist? './template.json'
-      abort 'Execute create task and generaete template.json before execute task'
-    end
     abort 'bundle exec rake cfn:execute BUCKET=<BUCKET_NAME>' if bucket.nil?
+    puts `bundle exec kumogata convert template.rb > template.json`
     puts `aws cloudformation create-stack --stack-name lambda-sample --template-body file://template.json`
   end
 
