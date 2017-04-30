@@ -35,7 +35,7 @@ The sample works together with Amazon SNS.
 
 * Execute CloudFormation
     ```sh
-    $ bundle exec rake cfn:upload
+    $ bundle exec rake cfn:execute
     ```
 
 ### Delete
