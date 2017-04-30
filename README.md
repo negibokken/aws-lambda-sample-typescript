@@ -10,6 +10,7 @@ The sample works together with Amazon SNS.
 
 * Node.js v4.3.2
 * Ruby 2.4.0
+* bundler 1.14.6
 
 ## Usage
 
