@@ -9,8 +9,9 @@ The sample works together with Amazon SNS.
 ## Development tools
 
 * Node.js v4.3.2
-* Ruby 2.3.3
-* bundler 1.13.6
+* Ruby v2.3.3
+* bundler v1.13.6
+* aws cli v1.11.44
 
 ## Usage
 
