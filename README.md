@@ -41,7 +41,7 @@ The sample works together with Amazon SNS.
 
 ### Delete
 
-* Execute CloudFormation
+* Delete CloudFormation
     ```sh
     $ bundle exec rake s3:delete
     $ bundle exec rake cfn:delete
