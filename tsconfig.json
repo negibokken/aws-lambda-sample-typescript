@@ -2,6 +2,7 @@
     "compilerOptions": {
         "noImplicitAny": true,
         "strictNullChecks": true,
+        "removeComments": false,
         "allowJs": true,
         "target": "es6",
         "module": "commonjs",
