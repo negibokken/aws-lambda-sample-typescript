@@ -51,4 +51,8 @@ jspm_packages
 *.js
 *.zip
 
+# JSDoc
 out
+
+# bundler
+vendor
