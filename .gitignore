@@ -55,3 +55,6 @@ out
 # bundler
 vendor
 config
+
+# CloudFormation
+template.json
