@@ -29,7 +29,7 @@ function getWeatherInformation(): Promise<any> {
  */
 function arrangeInformation(weatherNews: WeatherNewsResponse): Promise<AWS.SNS.PublishInput> {
     return new Promise((resolve: Function, reject: Function) => {
-        let news: string = weatherNews.forecasts.map((day) => { return `${day.dataLabel}:${day.telop}`; }).join("");
+        let news: string = weatherNews.forecasts.map((day) => { return `${day.dateLabel}:${day.telop}`; }).join("");
         const params: AWS.SNS.PublishInput = {
             Subject: `${weatherNews.location.prefecture}:${weatherNews.location.city}`,
             Message: news
