@@ -77,7 +77,7 @@ Resources do
   ScheduleEvent do
     Type 'AWS::Events::Rule'
     Properties do
-      ScheduleExpression 'cron(0 7 * * ? *)'
+      ScheduleExpression 'cron(0 22 * * ? *)'
       Targets [
         _ {
           Id 'WeatherNewsScheduleEvent'
