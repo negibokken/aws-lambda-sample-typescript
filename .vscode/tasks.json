@@ -19,6 +19,15 @@
                "clean"
             ],
             "isShellCommand": true
+        },
+        {
+            "taskName": "zip",
+            "command": "gulp",
+            "showOutput": "never",
+            "args": [
+               "zip"
+            ],
+            "isShellCommand": true
         }
     ]
 }
