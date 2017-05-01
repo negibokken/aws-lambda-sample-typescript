@@ -41,7 +41,8 @@ namespace :cfn do
     abort 'bundle exec rake cfn:execute BUCKET=<BUCKET_NAME>' if bucket.nil?
     puts `bundle exec kumogata convert template.rb > template.json`
     system 'aws cloudformation create-stack --stack-name weather-lambda --template-body file://template.json ' \
-           '--capabilities "CAPABILITY_NAMED_IAM" --region us-west-2'
+           '--capabilities "CAPABILITY_NAMED_IAM" --region us-west-2 ' \
+           "--parameters ParameterKey=BucketName,ParameterValue=#{bucket}"
   end
 
   task :delete do
