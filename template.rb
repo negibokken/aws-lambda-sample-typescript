@@ -1,11 +1,19 @@
 AWSTemplateFormatVersion '2010-09-09'
+
+Parameters do
+  BucketName do
+    Description 'Bucket Name'
+    Type 'String'
+  end
+end
+
 Resources do
   WeatherLambdaFunction do
     Type 'AWS::Lambda::Function'
     Properties do
       FunctionName 'weather-news-lambda'
       Code do
-        S3Bucket 'aws-lambda-sample-2017'
+        S3Bucket { Ref 'BucketName' }
         S3Key 'weather-lambda.zip'
       end
       Environment do
