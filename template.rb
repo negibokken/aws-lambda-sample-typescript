@@ -64,6 +64,29 @@ Resources do
     end
   end
 
+  LambdaPermission do
+    Type 'AWS::Lambda::Permission'
+    Properties do
+      Action 'lambda:InvokeFunction'
+      FunctionName 'weather-news-lambda'
+      SourceArn { Fn__GetAtt %w[ScheduleEvent Arn] }
+      Principal 'events.amazonaws.com'
+    end
+  end
+
+  ScheduleEvent do
+    Type 'AWS::Events::Rule'
+    Properties do
+      ScheduleExpression 'cron(0 7 * * ? *)'
+      Targets [
+        _ {
+          Id 'WeatherNewsScheduleEvent'
+          Arn { Fn__GetAtt %w[WeatherLambdaFunction Arn] }
+        },
+      ]
+    end
+  end
+
   SNSTopic do
     Type 'AWS::SNS::Topic'
     Properties do
