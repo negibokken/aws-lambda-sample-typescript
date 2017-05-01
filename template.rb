@@ -10,7 +10,7 @@ Resources do
       end
       Environment do
         Variables do
-          SNS_TOPIC_ARN { Fn__GetAtt %w[SNSTopic Arn] }
+          SNS_TOPIC_ARN { Ref 'SNSTopic' }
           URL 'http://weather.livedoor.com/forecast/webservice/json/v1?city=400040'
         end
       end
