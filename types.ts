@@ -4,7 +4,7 @@ interface PinpointLocations {
 }
 
 interface Forecast {
-    datalabel: string;
+    dataLabel: string;
     telop: string;
     date: string;
     temperature: Object;
