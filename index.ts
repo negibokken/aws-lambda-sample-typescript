@@ -8,7 +8,7 @@ import * as request from "request";
  * specified URL with environment variable
  */
 function getWeatherInformation(): Promise<any> {
-    return new Promise((resolve: any, reject: any): void => {
+    return new Promise((resolve: Function, reject: Function): void => {
         let url: string = process.env.URL;
         if (!url) { reject("[Error] Environment variable 'URL' is not specified."); }
         let param: request.OptionsWithUrl = {
@@ -58,7 +58,7 @@ function validateTopicArn(topicArn: string): string|undefined {
  * Promise wrapped AWS.publish
  */
 function publish(params: AWS.SNS.PublishInput): Promise<any> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve: Function, reject: Function) => {
         let topicArn: string = process.env.SNS_TOPIC_ARN;
         if (!topicArn) { reject("[Error] No Topic ARN specified"); }
 
