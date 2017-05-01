@@ -9,6 +9,8 @@ import * as request from "request";
  */
 function getWeatherInformation(): Promise<any> {
     return new Promise((resolve: any, reject: any): void => {
+        let url: string = process.env.URL;
+        if (!url) { reject("[Error] Environment variable 'URL' is not specified."); }
         let param: request.OptionsWithUrl = {
             url: process.env.URL,
         };
@@ -27,9 +29,10 @@ function getWeatherInformation(): Promise<any> {
  */
 function arrangeInformation(weatherNews: WeatherNewsResponse): Promise<AWS.SNS.PublishInput> {
     return new Promise((resolve: Function, reject: Function) => {
+        let news: string = weatherNews.forecasts.map((day) => { return `${day.datalabel}:${day.telop}`; }).join("");
         const params: AWS.SNS.PublishInput = {
-            Subject: JSON.stringify(weatherNews.location),
-            Message: JSON.stringify(weatherNews.forecasts)
+            Subject: `${weatherNews.location.prefecture}:${weatherNews.location.city}`,
+            Message: news
         };
         resolve(params);
     });
@@ -56,7 +59,7 @@ function validateTopicArn(topicArn: string): string|undefined {
  */
 function publish(params: AWS.SNS.PublishInput): Promise<any> {
     return new Promise((resolve, reject) => {
-        let topicArn: string = process.env.TopicArn;
+        let topicArn: string = process.env.SNS_TOPIC_ARN;
         if (!topicArn) { reject("[Error] No Topic ARN specified"); }
 
         const region: string|undefined = validateTopicArn(topicArn);
