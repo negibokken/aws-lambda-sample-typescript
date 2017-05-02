@@ -22,7 +22,6 @@
   "private": true,
   "scripts": {
     "build": "gulp build",
-    "clean": "gulp clean",
     "start": "gulp zip"
   }
 }
