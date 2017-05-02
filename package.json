@@ -21,7 +21,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp",
     "start": "gulp zip"
   }
 }
