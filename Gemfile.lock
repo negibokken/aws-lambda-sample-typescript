@@ -51,7 +51,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  json (~> 1.3)
   kumogata (= 0.5.10)
   rake
 

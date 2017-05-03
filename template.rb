@@ -28,7 +28,6 @@ Resources do
       Role { Fn__GetAtt %w[WeatherLambdaRole Arn] }
     end
   end
-
   WeatherLambdaRole do
     Type 'AWS::IAM::Role'
     Properties do
@@ -63,7 +62,6 @@ Resources do
       ]
     end
   end
-
   LambdaPermission do
     Type 'AWS::Lambda::Permission'
     Properties do
@@ -73,7 +71,6 @@ Resources do
       Principal 'events.amazonaws.com'
     end
   end
-
   ScheduleEvent do
     Type 'AWS::Events::Rule'
     Properties do
@@ -86,7 +83,6 @@ Resources do
       ]
     end
   end
-
   SNSTopic do
     Type 'AWS::SNS::Topic'
     Properties do
