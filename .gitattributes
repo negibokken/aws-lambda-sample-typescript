@@ -1,2 +1,4 @@
 Rakefile
 template.rb
+Gemfile
+Gemfile.lock
