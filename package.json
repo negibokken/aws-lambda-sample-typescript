@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "bokken",
   "dependencies": {
-    "aws-sdk": "^2.45.0",
+    "aws-sdk": "^2.814.0",
     "request": "^2.81.0"
   },
   "devDependencies": {
