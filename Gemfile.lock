@@ -9,7 +9,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    diffy (3.2.0)
+    diffy (3.4.2)
     dslh (0.2.7)
     execjs (2.7.0)
     hashie (3.5.5)
